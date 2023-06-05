@@ -1,5 +1,2 @@
 #!/bin/bash
-python3 - <<END
-import py_compile
-py_compile.compile("$PYFILE", cfile="$PYFILEc")
-END
+python3 -m compileall -b $PYFILE i $PYFILEc
