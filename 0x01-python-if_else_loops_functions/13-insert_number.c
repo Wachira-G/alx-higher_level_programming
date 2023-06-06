@@ -22,7 +22,7 @@ listint_t *insert_node(listint_t **head, int number)
 		return (NULL);
 	}
 	new_node->n = number; /* populate the new node */
-	if (*head == NULL || (*head)->n > number) /* empty list or beginning*/
+	if (*head == NULL || (*head)->n >= number) /* empty list or beginning*/
 	{
 		new_node->next = *head;
 		*head = new_node;
@@ -31,13 +31,20 @@ listint_t *insert_node(listint_t **head, int number)
 
 	temp = *head;
 	/* middle of list or end of list*/
-	while (temp->next != NULL && temp->n < number)
+	while (temp->next != NULL && temp->n <= number)/* move till end */
 	{
 		prev = temp;
 		temp = temp->next;
 	}
-	new_node->next = temp;
+	if (temp->next == NULL && temp->n < number)
+	{
+		temp->next = new_node;
+		new_node->next = NULL;
+		return (new_node);
+	}
+	/* add new node in middle of list */
 	prev->next = new_node;
+	new_node->next = temp;
 
 	return (new_node);
 }
