@@ -4,5 +4,5 @@ for dig1 in range(0, 8):
         if dig2 <= dig1:
             continue
         else:
-            print(f'{dig1}{dig2}', '', sep=', ', end='')
-print(f'{dig1 + 1}{dig2}')
+            print('{}{}'.format(dig1, dig2), '', sep=', ', end='')
+print('{}{}'.format(dig1 + 1, dig2))
