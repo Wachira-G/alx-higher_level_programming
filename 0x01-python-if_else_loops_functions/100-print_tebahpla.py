@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+for character in [chr(i).upper() if i%2 != 0 else chr(i) for i in range(122, 96, -1)]:
+    print(character, end='')
