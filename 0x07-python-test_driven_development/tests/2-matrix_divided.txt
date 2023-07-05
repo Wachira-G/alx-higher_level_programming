@@ -28,6 +28,25 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 
 
+
+# additional levels/ nested of matrices but div is string
+>>> matrix = [[1] , [1]]
+>>> matrix_divided(matrix, '2')
+Traceback (most recent call last):
+  ...
+TypeError: div must be a number
+
+
+
+# additional levels/ nested of matrices but div is 0
+>>> matrix = [[1] , [1]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+  ...
+ZeroDivisionError: division by zero
+
+
+
 # additional levels/ nested of matrices
 >>> matrix = [[1] , [1]]
 >>> matrix_divided(matrix, 2)
