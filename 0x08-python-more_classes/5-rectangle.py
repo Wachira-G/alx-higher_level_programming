@@ -129,7 +129,10 @@ class Rectangle:
         Returns:
             str: A string representation of the rectangle.
         """
-        str_rectangle = (self.__width * "#" + "\n") * self.__height
+        str_rectangle = (
+            self.__width * '#' + "\n") * (self.__height - 1)
+        str_rectangle += self.__width * '#'
+
         return str_rectangle
 
     def __repr__(self) -> str:

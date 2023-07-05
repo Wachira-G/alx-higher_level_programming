@@ -18,3 +18,14 @@ my_rectangle.width = 10
 my_rectangle.height = 3
 print(my_rectangle)
 print(repr(my_rectangle))
+
+
+print('-----------')
+myrectangle = Rectangle(2, 4)
+print(str(myrectangle))
+
+myrectangle = Rectangle(2, 4)
+print(myrectangle)
+
+myrectangle = Rectangle(0, 4)
+print(str(myrectangle))
