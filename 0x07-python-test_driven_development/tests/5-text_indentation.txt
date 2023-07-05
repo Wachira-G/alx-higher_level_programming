@@ -6,7 +6,6 @@ hello
 >>> text_indentation('hello world.')
 hello world.
 <BLANKLINE>
-<BLANKLINE>
 
 >>> text_indentation("Holberton.School")
 Holberton.

@@ -6,6 +6,12 @@ after each of these characters: '., ? and :'
 
 
 def text_indentation(text):
+    """
+    Prints a text with 2 lines after .?: characters
+
+    Args:
+        text (str): the text we are printing out'
+    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
@@ -21,7 +27,7 @@ def text_indentation(text):
         else:
             result += letter
             add_newline = False
-    print(result.strip(" "))
+    print(result.strip(" "), end='')
 
     """sentences = []
     for splitt in text.split("."):
