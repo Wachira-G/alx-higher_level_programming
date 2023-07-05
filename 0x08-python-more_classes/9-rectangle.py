@@ -182,4 +182,22 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """Create a new instance of Rectangle with equal width and height.
+
+        This method creates a new instance of the Rectangle class
+        with both the width and height set to the given size,
+        or 0 if no size is provided.
+
+        Args:
+            size (int): The size of the square. Defaults to 0.
+
+        Returns:
+            Rectangle: A new instance of the Rectangle class
+            representing a square.
+
+        Example:
+            square = Rectangle.square(5)
+            print(square.width)  # Output: 5
+            print(square.height)  # Output: 5
+        """
         return cls(size, size)
