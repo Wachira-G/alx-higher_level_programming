@@ -134,6 +134,9 @@ class Rectangle:
         Returns:
             str: A string representation of the rectangle.
         """
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
         str_rectangle = (
             self.__width * str(self.print_symbol) + "\n") * (self.__height - 1)
         str_rectangle += self.__width * str(self.print_symbol)

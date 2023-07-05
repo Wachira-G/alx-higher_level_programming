@@ -24,8 +24,15 @@ print('-----------')
 myrectangle = Rectangle(2, 4)
 print(str(myrectangle))
 
+print('-----------')
 myrectangle = Rectangle(2, 4)
 print(myrectangle)
 
+print('-----------')
 myrectangle = Rectangle(0, 4)
 print(str(myrectangle))
+
+print('-----------')
+myrectangle = Rectangle(2, 0)
+print(str(myrectangle))
+print('-----------')
