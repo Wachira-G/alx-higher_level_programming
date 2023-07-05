@@ -20,6 +20,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(4, max_integer([1, 2, 3, 4]))
         self.assertEqual("rer", max_integer(["rer", "hek"]))
         self.assertEqual("r", max_integer("rer"))
+        self.assertEqual(6, max_integer([1, 2, 6, 3, 4]))
+        self.assertEqual(1, max_integer([1]))
 
     def test_raises(self):
         """tests if errors are caught, given various inputs

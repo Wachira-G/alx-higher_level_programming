@@ -18,7 +18,7 @@ def matrix_divided(matrix, div):
         TypeError: If the divisor is not a float or integer.
         ZeroDivisionError: If the divisor is zero (cannot divide by zero).
         TypeError: If all rows do not have the same size.
-        TypeError: If any element in the final nested list is not an int or float.
+        TypeError: If any element in final nested list is not an int or float.
 
     Returns:
         list: The result of dividing each integer and float in the matrix.
@@ -29,8 +29,14 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     # Check if matrix is a valid list of lists
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if (
+        not isinstance(matrix, list)
+        or not all(isinstance(row, list) for row in matrix)
+        or len(matrix) == 0
+        or any([len(row) == 0 for row in matrix])
+    ):
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
 
     # Check if all rows have the same size
     row_size = len(matrix[0])
@@ -43,7 +49,10 @@ def matrix_divided(matrix, div):
         result_row = []
         for element in row:
             if not isinstance(element, (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(
+                    "matrix must be a matrix (list of lists) \
+                    of integers/floats"
+                )
             result_row.append(round(element / div, 2))
         result_matrix.append(result_row)
 

@@ -9,11 +9,13 @@ then calcultates the addition of the two and finally returns the value
 
 
 def add_integer(a, b=98):
-    """The function add_integer adds two integers (all floats are casted into integers) and returns the result
+    """The function add_integer adds two integers
+    (all floats are casted into integers) and returns the result
 
     Args:
         a (int): first argument of either int or float
-        b (int, optional): second argumentst that is either an int or float. Defaults to 98.
+        b (int, optional): second argumentst that is either an int or float.
+            Defaults to 98.
 
     Raises:
         TypeError: if a is not an integer or a float, complain
