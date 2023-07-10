@@ -5,7 +5,7 @@ the behavior of derived attributes'''
 
 
 class MyInt(int):
-    """A class that inherits from int:
+    """A class that inherits frm int:
     but is a rebel such that  MyInt has == and != operators inverted
 
     Args:
