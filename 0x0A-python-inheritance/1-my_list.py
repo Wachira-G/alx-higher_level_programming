@@ -5,10 +5,10 @@
 
 
 class MyList(list):
-    """The class MyList inherits from list
+    """The class MyList inherits frm list
 
     Args:
-        list (list): inherits from the list object class
+        list (list): inherits frm the list object class
     """
 
     def print_sorted(self):
