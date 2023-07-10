@@ -1,0 +1,16 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my.print_sorted()
+[]
+
+>>> my.append(0)
+>>> my.print_sorted()
+[0]
+
+>>> my.append(-1)
+
+>>> print(my)
+[0, -1]
+
+>>> my.print_sorted()
+[-1, 0]
