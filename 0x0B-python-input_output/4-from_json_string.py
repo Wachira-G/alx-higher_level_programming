@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-import json
 
 """A module containing a function that converts the json string
 to a python data structure"""
+
+import json
 
 
 def from_json_string(my_str):

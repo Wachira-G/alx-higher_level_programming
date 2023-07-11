@@ -1,7 +1,8 @@
 #!/usr/bin/bash
-import json
 
 """A module containing a funtion that creates an object from a JSON file"""
+
+import json
 
 
 def load_from_json_file(filename):
