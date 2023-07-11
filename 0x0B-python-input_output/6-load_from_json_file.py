@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 
 """A module containing a funtion that creates an object from a JSON file"""
 
