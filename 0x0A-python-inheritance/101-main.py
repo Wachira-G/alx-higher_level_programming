@@ -16,3 +16,30 @@ try:
     print(a.name)
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    a = "My String"
+    add_attribute(a, "hbtn", "Holberton")
+    print(a.name)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    a = 89
+    add_attribute(a, "hbtn", "Holberton")
+    print(a.name)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+
+class MyClass():
+    slots = ["first_name"]
+    pass
+
+
+try:
+    a = MyClass()
+    add_attribute(a, "hbtn", "Holberton")
+    print(a.name)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))

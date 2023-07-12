@@ -12,7 +12,7 @@ def add_attribute(self, name, value):
         name (str): the name of the object
         value (Any): any of the types that can be stored there.
     """
-    if hasattr(self, name):
+    if not hasattr(self, '__dict__'):
         raise TypeError("can't add new attribute")
-    else:
-        setattr(self, name, value)
+
+    setattr(self, name, value)
