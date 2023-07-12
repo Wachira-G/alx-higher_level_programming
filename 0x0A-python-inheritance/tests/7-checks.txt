@@ -1,0 +1,113 @@
+
+# 0
+# File is present
+# Missing: 7-base_geometry.py, tests/7-base_geometry.txt
+
+
+# 1
+# First line contains #!/usr/bin/python3
+
+# 2
+# You are not allowed to import any module
+
+
+# 3
+# Module is documented
+
+
+# 4
+# Class is documented
+
+
+# 5 
+# Correct output - case: bg = BaseGeometry() print(dir(bg))
+
+
+# 6
+# Correct output - case: bg = BaseGeometry() bg.integervalidator(“myint”, 12)
+
+
+# 7
+# Correct output - case: bg = BaseGeometry() bg.integervalidator(“myint”, 12) bg.integer_validator(“width”, 89)
+
+
+# 8
+# Correct output - case: bg = BaseGeometry() bg.integer_validator(“name”, “John”)
+
+
+# 9
+# Correct output - case: bg = BaseGeometry() bg.integer_validator(“age”, 0)
+
+
+# 10
+# Correct output - case:
+# bg = BaseGeometry() bg.integer_validator(“age”, -4)
+
+
+# 11
+# Correct output - case: bg = BaseGeometry() bg.integer_validator(“age”, 13.5)
+
+
+# 12
+# Correct output - case: bg = BaseGeometry() bg.area()
+
+
+# 13
+# Regular tests passed
+
+
+
+# 14
+# Test present: check instantiation
+
+
+# 15
+# Test present: area()
+
+
+# 16
+# Test present: integer_validator()
+
+
+# 17
+# Test present: integer_validator(“age”)
+
+
+# 18
+# Test present: integer_validator(“age”, 1)
+
+
+# 19
+# Test present: integer_validator(“age”, 0)
+
+
+# 20
+# Test present: integer_validator(“age”, -4)
+
+
+# 21
+# Test present: integer_validator(“age”, “4”)
+
+
+# 22
+# Test present: integer_validator(“age”, (4,))
+
+
+# 23
+# Test present: integer_validator(“age”, [3])
+
+
+# 24
+# Test present: integer_validator(“age”, True)
+
+
+# 25
+# Test present: integer_validator(“age”, {3, 4})
+
+
+# 26
+# Test present: integer_validator(“age”, None)
+
+
+# 27
+# Pycodestyle validation
