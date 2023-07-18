@@ -45,6 +45,7 @@ class TestRectangle(unittest.TestCase):
         for instance in self.instances:
             del instance
         self.instances.clear()
+        self.instances = []
 
     def test_initialization(self):
         """
@@ -280,6 +281,10 @@ class TestRectangle(unittest.TestCase):
         self.instances.append(Rectangle(5, 5))
         r1 = self.instances[-1]
 
+        # Test update with args of size zero
+        r1.update()
+        self.assertEqual(r1.id, 9)  # TODO id not 1 but 9 why?
+
         # Test update with args of size one
         r1.update(89)
         self.assertEqual(r1.id, 89)
@@ -307,7 +312,7 @@ class TestRectangle(unittest.TestCase):
         self.setUp()
         # KWARGS TESTS
         # Create a Rectangle instance
-        self.instances.append(Rectangle(10, 10, 10, 10, 1))  # TODO bug no id
+        self.instances.append(Rectangle(10, 10, 10, 10, 1))  # TODO bug no id?
         rect = self.instances[-1]
         self.assertEqual(str(rect), "[Rectangle] (1) 10/10 - 10/10")
 
