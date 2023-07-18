@@ -13,7 +13,7 @@ class Tests(unittest.TestCase):
     This class represents a collection of unit tests for the Base class.
     """
     instances = []
-    
+
     @classmethod
     def setUpClass(cls):
         """This method is called once before any tests are run.

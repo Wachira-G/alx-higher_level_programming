@@ -62,6 +62,14 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.y, 0)
         self.assertIsNotNone(rect.id)
 
+        self.instances.append(Rectangle(1, 2, 3, 4, 5))
+        rec = self.instances[-1]
+        self.assertEqual(rec.width, 1)
+        self.assertEqual(rec.height, 2)
+        self.assertEqual(rec.x, 3)
+        self.assertEqual(rec.y, 4)
+        self.assertEqual(rec.id, 5)
+
     def test_invalid_inputs(self):
         """
         Tests if the Rectangle object raises exceptions for invalid inputs.
@@ -76,10 +84,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(2)  # less arguments
 
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Rectangle(-1, 2, 3, 4, None)  # negative width
 
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Rectangle(1, -2, 3, 4, None)  # negative height
 
         with self.assertRaises(TypeError):
@@ -94,11 +102,23 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 1.2, 0, 0)  # float width
 
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Rectangle(1, 1, -1, 0)  # negative x
 
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Rectangle(1, 1, 0, -1)  # negative y
+
+        with self.assertRaises(TypeError):
+            Rectangle(1, 1, '3')  # string x
+
+        with self.assertRaises(TypeError):
+            Rectangle(1, 1, 0, '4')  # string y
+
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)  # zero height
+
+        with self.assertRaises(ValueError):
+            Rectangle(0, 1)  # zero width
 
     def test_property_setters(self):
         """
@@ -123,11 +143,29 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             rect.height = None  # Invalid height type
 
+        with self.assertRaises(ValueError):
+            rect.width = 0  # width = 0
+
+        with self.assertRaises(ValueError):
+            rect.height = 0  # height = 0
+
+        with self.assertRaises(ValueError):
+            rect.width = -1  # width < 0
+
+        with self.assertRaises(ValueError):
+            rect.height = -2  # height < 0
+
         with self.assertRaises(TypeError):
             rect.x = "5"  # Invalid x type
 
         with self.assertRaises(TypeError):
             rect.y = "4"  # Invalid y type
+
+        with self.assertRaises(ValueError):
+            rect.x = -1  # x < 0
+
+        with self.assertRaises(ValueError):
+            rect.y = -3  # y < 0
 
     def test_area(self):
         '''Tests if the area property returns the correct values
