@@ -186,8 +186,9 @@ class Rectangle(Base):
         Returns:
             None.
         """
-        for _ in range(self.__height):
-            print('#' * self.__width)
+        print(self.__y * '\n', end='')
+        for row in range(self.__height):
+            print(self.__x * ' ' + '#' * self.__width)
 
     def __str__(self) -> str:
         """
@@ -201,3 +202,55 @@ class Rectangle(Base):
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """
+        Updates the attributes of the instance based on the given arguments.
+
+        Args:
+            *args: Variable-length argument list.
+                - If args is non-empty and size > 0,
+                  assigns the first argument to the `id` attribute.
+                - If args is non-empty and size > 1,
+                  assigns the second argument to the `__width` attribute.
+                - If args is non-empty and size > 2,
+                  assigns the third argument to the `__height` attribute.
+                - If args is non-empty and size > 3,
+                  assigns the fourth argument to the `__x` attribute.
+                - If args is non-empty and size > 4,
+                  assigns the fifth argument to the `__y` attribute.
+            **kwargs: Variable-length keyword arguments.
+                - Updates the instance attributes
+                  based on the provided key-value pairs.
+                - If the key is 'id', assigns the value to the `id` attribute.
+                - If the key corresponds to a private attribute
+                  (e.g., '__width', '__height'),
+                assigns the value to the corresponding attribute.
+
+        Returns:
+            None
+        """
+        size = len(args)
+
+        if size > 0:
+            self.id = args[0]
+
+        if size > 1:
+            self.__width = args[1]
+
+        if size >2:
+            self.__height = args[2]
+
+        if size > 3:
+            self.__x = args[3]
+
+        if size > 4:
+            self.__y = args[4]
+        
+        for key, value in kwargs.items():
+            if key == 'id':
+                self.id = value
+            else:
+                private_attr = '_Rectangle__' + key
+                if hasattr(self, private_attr):
+                    setattr(self, private_attr, value)

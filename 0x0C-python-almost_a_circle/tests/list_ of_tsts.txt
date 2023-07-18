@@ -1,0 +1,1658 @@
+===============
+Test of Base() for assigning automatically an ID exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_0.py
+
+
+
+===============
+Test of Base() for assigning automatically an ID + 1 of the previous exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_1.py
+
+
+
+===============
+Test of Base(89) saving the ID passed exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_2.py
+
+
+
+===============
+Test of Base.to_json_string(None) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_3.py
+
+
+
+===============
+Test of Base.to_json_string([]) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_4.py
+
+
+
+===============
+Test of Base.to_json_string([ { 'id': 12 }]) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_5.py
+
+
+
+===============
+Test of Base.to_json_string([ { 'id': 12 }]) returning a string exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_6.py
+
+
+
+===============
+Test of Base.from_json_string(None) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_7.py
+
+
+
+===============
+Test of Base.from_json_string("[]") exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_8.py
+
+
+
+===============
+Test of Base.from_json_string('[{ "id": 89 }]') exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_9.py
+
+
+
+===============
+Test of Base.from_json_string('[{ "id": 89 }]') returning a list exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_10.py
+
+
+
+===============
+Test of Rectangle(1, 2) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_11.py
+
+
+
+===============
+Test of Rectangle(1, 2, 3) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_12.py
+
+
+
+===============
+Test of Rectangle(1, 2, 3, 4) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_13.py
+
+
+
+===============
+Test of Rectangle("1", 2) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_14.py
+
+
+
+===============
+Test of Rectangle(1, "2") exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_15.py
+
+
+
+===============
+Test of Rectangle(1, 2, "3") exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_16.py
+
+
+
+===============
+Test of Rectangle(1, 2, 3, "4") exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_17.py
+
+
+
+===============
+Test of Rectangle(1, 2, 3, 4, 5) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_18.py
+
+
+
+===============
+Test of Rectangle(-1, 2) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_19.py
+
+
+
+===============
+Test of Rectangle(1, -2) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_20.py
+
+
+
+===============
+Test of Rectangle(0, 2) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_21.py
+
+
+
+===============
+Test of Rectangle(1, 0) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_22.py
+
+
+
+===============
+Test of Rectangle(1, 2, -3) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_23.py
+
+
+
+===============
+Test of Rectangle(1, 2, 3, -4) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_24.py
+
+
+
+===============
+Test of area() exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_25.py
+
+
+
+===============
+Test of __str__() for Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_26.py
+
+
+
+===============
+Test of display() without x and y exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_27.py
+
+
+
+===============
+Test of display() without y exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_28.py
+
+
+
+===============
+Test of display() exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_29.py
+
+
+
+===============
+Test of to_dictionary() in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_30.py
+
+
+
+===============
+Test of update() in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_31.py
+
+
+
+===============
+Test of update(89) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_32.py
+
+
+
+===============
+Test of update(89, 1) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_33.py
+
+
+
+===============
+Test of update(89, 1, 2) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_34.py
+
+
+
+===============
+Test of update(89, 1, 2, 3) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_35.py
+
+
+
+===============
+Test of update(89, 1, 2, 3, 4) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_36.py
+
+
+
+===============
+Test of update(**{ 'id': 89 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_37.py
+
+
+
+===============
+Test of update(**{ 'id': 89, 'width': 1 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_38.py
+
+
+
+===============
+Test of update(**{ 'id': 89, 'width': 1, 'height': 2 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_39.py
+
+
+
+===============
+Test of update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_40.py
+
+
+
+===============
+Test of update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_41.py
+
+
+
+===============
+Test of Rectangle.create(**{ 'id': 89 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_42.py
+
+
+
+===============
+Test of Rectangle.create(**{ 'id': 89, 'width': 1 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_43.py
+
+
+
+===============
+Test of Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_44.py
+
+
+
+===============
+Test of Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_45.py
+
+
+
+===============
+Test of Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 }) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_46.py
+
+
+
+===============
+Test of Rectangle.save_to_file(None) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_47.py
+
+
+
+===============
+Test of Rectangle.save_to_file([]) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_48.py
+
+
+
+===============
+Test of Rectangle.save_to_file([Rectangle(1, 2)]) in Rectangle exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_49.py
+
+
+
+===============
+Test of Rectangle.load_from_file() when file doesn’t exist exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_50.py
+
+
+
+===============
+Test of Rectangle.load_from_file() when file exists exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_51.py
+
+
+
+===============
+Test of Square(1) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_52.py
+
+
+
+===============
+Test of Square(1, 2) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_53.py
+
+
+
+===============
+Test of Square(1, 2, 3) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_54.py
+
+
+
+===============
+Test of Square("1") exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_55.py
+
+
+
+===============
+Test of Square(1, "2") exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_56.py
+
+
+
+===============
+Test of Square(1, 2, "3") exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_57.py
+
+
+
+===============
+Test of Square(1, 2, 3, 4) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_58.py
+
+
+
+===============
+Test of Square(-1) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_59.py
+
+
+
+===============
+Test of Square(1, -2) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_60.py
+
+
+
+===============
+Test of Square(1, 2, -3) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_61.py
+
+
+
+===============
+Test of Square(0) exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_62.py
+
+
+
+===============
+Test of __str__() for Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_63.py
+
+
+
+===============
+Test of to_dictionary() in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_64.py
+
+
+
+===============
+Test of update() in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_65.py
+
+
+
+===============
+Test of update(89) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_66.py
+
+
+
+===============
+Test of update(89, 1) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_67.py
+
+
+
+===============
+Test of update(89, 1, 2) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_68.py
+
+
+
+===============
+Test of update(89, 1, 2, 3) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_69.py
+
+
+
+===============
+Test of update(**{ 'id': 89 }) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_70.py
+
+
+
+===============
+Test of update(**{ 'id': 89, 'size': 1 }) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_71.py
+
+
+
+===============
+Test of update(**{ 'id': 89, 'size': 1, 'x': 2 }) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_72.py
+
+
+
+===============
+Test of update(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 }) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_73.py
+
+
+
+===============
+Test of Square.create(**{ 'id': 89 }) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_74.py
+
+
+
+===============
+Test of Square.create(**{ 'id': 89, 'size': 1 }) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_75.py
+
+
+
+===============
+Test of Square.create(**{ 'id': 89, 'size': 1, 'x': 2 }) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_76.py
+
+
+
+===============
+Test of Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 }) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_77.py
+
+
+
+===============
+Test of Square.save_to_file(None) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_78.py
+
+
+
+===============
+Test of Square.save_to_file([]) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_79.py
+
+
+
+===============
+Test of Square.save_to_file([Square(1)]) in Square exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_80.py
+
+
+
+===============
+Test of Square.load_from_file() when file doesn’t exist exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_81.py
+
+
+
+===============
+Test of Square.load_from_file() when file exists exists
+
+Score: 0 out of 1 points
+
+Reason:
+
+ - [Got]
+Regular tests are not passing
+
+(30 chars long)
+
+[Expected]
+OK
+(2 chars long)
+
+Files: main_82.py
+

@@ -206,6 +206,42 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(captured_output.getvalue(), expected_output)
 
+        self.instances.append(Rectangle(2, 3, 2, 2))
+        r2 = self.instances[-1]
+        expected_output = '\n\n  ##\n  ##\n  ##\n'
+
+        #  Redirect stdout to capture print output
+        import sys
+        from io import StringIO
+
+        captured_output = StringIO()
+        sys.stdout = captured_output
+
+        r2.display()
+
+        #  Reset stdout
+        sys.stdout = sys.__stdout__
+
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        self.instances.append(Rectangle(2, 3, 2))
+        r3 = self.instances[-1]
+        expected_output = '  ##\n  ##\n  ##\n'
+
+        #  Redirect stdout to capture print output
+        import sys
+        from io import StringIO
+
+        captured_output = StringIO()
+        sys.stdout = captured_output
+
+        r3.display()
+
+        #  Reset stdout
+        sys.stdout = sys.__stdout__
+
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
     def test__str__(self):
         '''
         Tests the custom __str__ method
@@ -215,16 +251,86 @@ class TestRectangle(unittest.TestCase):
         Returns:
         - None
         '''
-        rect = Rectangle(1, 2)
+        self.instances.append(Rectangle(1, 2))
+        rect = self.instances[-1]
         self.assertEqual(rect.__str__(), '[Rectangle] (1) 0/0 - 1/2')
 
-        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.instances.append(Rectangle(4, 6, 2, 1, 12))
+        r1 = self.instances[-1]
         string1 = '[Rectangle] (12) 2/1 - 4/6'
         self.assertEqual(str(r1), string1)
 
-        r2 = Rectangle(5, 5, 1)
+        self.instances.append(Rectangle(5, 5, 1))
+        r2 = self.instances[-1]
         string2 = '[Rectangle] (2) 1/0 - 5/5'
         self.assertEqual(str(r2), string2)
+
+    def test_update(self):
+        '''Tests correct update to attributes:
+        1st argument should be the id attribute
+        2nd argument should be the width attribute
+        3rd argument should be the height attribute
+        4th argument should be the x attribute
+        5th argument should be the y attribute
+
+        Returns:
+        - None
+        '''
+        # Create a Rectangle instance
+        self.instances.append(Rectangle(5, 5))
+        r1 = self.instances[-1]
+
+        # Test update with args of size one
+        r1.update(89)
+        self.assertEqual(r1.id, 89)
+
+        # Test update with args of size 2
+        r1.update(2, 3)
+        self.assertEqual(r1.width, 3)
+
+        # Test update with args of size 3
+        r1.update(4, 5, 6)
+        self.assertEqual(r1.height, 6)
+
+        # Test update with args of size 4
+        r1.update(7, 8, 9, 10)
+        self.assertEqual(r1.x, 10)
+
+        # Test update with args of size 5
+        r1.update(11, 12, 13, 14, 15)
+        self.assertEqual(r1.y, 15)
+
+        # with self.assertRaises(TypeError): # extra args
+        #    r1.update(11, 12, 13, 14, 15, 16)
+
+        self.tearDown()
+        self.setUp()
+        # KWARGS TESTS
+        # Create a Rectangle instance
+        self.instances.append(Rectangle(10, 10, 10, 10, 1))  # TODO bug no id
+        rect = self.instances[-1]
+        self.assertEqual(str(rect), "[Rectangle] (1) 10/10 - 10/10")
+
+        # Test update with keyword argument height=1
+        rect.update(height=1)
+        self.assertEqual(str(rect), "[Rectangle] (1) 10/10 - 10/1")
+
+        # Test update with keyword arguments width=1 and x=2
+        rect.update(width=1, x=2)
+        self.assertEqual(str(rect), "[Rectangle] (1) 2/10 - 1/1")
+
+        # Test update with keyword arguments y=1, width=2, x=3, id=89
+        rect.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(str(rect), "[Rectangle] (89) 3/1 - 2/1")
+
+        # Test update with keyword arguments x=1, height=2, y=3, width=4
+        rect.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(str(rect), "[Rectangle] (89) 1/3 - 4/2")
+
+        # Test update with keyword arguments x=1, height=2, y=3, width=4, id=98
+        rect.update(x=1, height=2, y=3, width=4, id=98)
+        self.assertEqual(str(rect), "[Rectangle] (98) 1/3 - 4/2")
+
 
 
 if __name__ == "__main__":
