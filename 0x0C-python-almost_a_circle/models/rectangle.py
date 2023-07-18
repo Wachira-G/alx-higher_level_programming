@@ -238,7 +238,7 @@ class Rectangle(Base):
         if size > 1:
             self.__width = args[1]
 
-        if size >2:
+        if size > 2:
             self.__height = args[2]
 
         if size > 3:
@@ -246,7 +246,7 @@ class Rectangle(Base):
 
         if size > 4:
             self.__y = args[4]
-        
+
         for key, value in kwargs.items():
             if key == 'id':
                 self.id = value

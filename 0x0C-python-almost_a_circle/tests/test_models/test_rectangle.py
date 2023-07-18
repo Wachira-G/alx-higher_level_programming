@@ -332,6 +332,5 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(rect), "[Rectangle] (98) 1/3 - 4/2")
 
 
-
 if __name__ == "__main__":
     unittest.main()
