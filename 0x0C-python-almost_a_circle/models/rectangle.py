@@ -230,27 +230,42 @@ class Rectangle(Base):
         Returns:
             None
         """
-        size = len(args)
+        if args and len(args) > 0:
+            size = len(args)
 
-        if size > 0:
-            self.id = args[0]
+            if size > 0:
+                self.id = args[0]
 
-        if size > 1:
-            self.__width = args[1]
+            if size > 1:
+                self.__width = args[1]
 
-        if size > 2:
-            self.__height = args[2]
+            if size > 2:
+                self.__height = args[2]
 
-        if size > 3:
-            self.__x = args[3]
+            if size > 3:
+                self.__x = args[3]
 
-        if size > 4:
-            self.__y = args[4]
+            if size > 4:
+                self.__y = args[4]
 
-        for key, value in kwargs.items():
-            if key == 'id':
-                self.id = value
-            else:
-                private_attr = '_Rectangle__' + key
-                if hasattr(self, private_attr):
-                    setattr(self, private_attr, value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                else:
+                    private_attr = '_Rectangle__' + key
+                    if hasattr(self, private_attr):
+                        setattr(self, private_attr, value)
+
+    def to_dictionary(self):
+        """Creates a dicitonary represenation of the instance
+
+        Returns:
+            dict: a dict containing the instances's id, width, height, x and y
+        """
+        return {'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y,
+                }

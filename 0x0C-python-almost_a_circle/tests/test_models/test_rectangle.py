@@ -6,21 +6,21 @@ This module defines unit tests for the Rectangle class.
 
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestRectangle(unittest.TestCase):
     """
     This class represents a collection of unit tests for the Rectangle class.
     """
-    instances = []
-
     @classmethod
     def setUpClass(cls):
         """This method is called once before any tests are run.
         It can be used to set up any expensive resources
         that need to be shared across the test methods.
         """
-        pass
+        cls._Base__nb_objects = 0
+        cls.instances = []
 
     @classmethod
     def tearDownClass(cls):
@@ -28,24 +28,21 @@ class TestRectangle(unittest.TestCase):
         It can be used to clean up any resources that were created
         in the setUpClass method.
         """
-        pass
+        cls.instances.clear()
 
     def setUp(self):
         """This method is called before each test method is run.
         It can be used to set up any resources that are needed
         by the test methods.
         """
-        self.instances = []
+        Base._Base__nb_objects = 0
 
     def tearDown(self):
         """This method is called after each test method is run.
         It can be used to clean up any resources that were created
         in the setUp method.
         """
-        for instance in self.instances:
-            del instance
         self.instances.clear()
-        self.instances = []
 
     def test_initialization(self):
         """
@@ -283,7 +280,7 @@ class TestRectangle(unittest.TestCase):
 
         # Test update with args of size zero
         r1.update()
-        self.assertEqual(r1.id, 9)  # TODO id not 1 but 9 why?
+        self.assertEqual(r1.id, 1)
 
         # Test update with args of size one
         r1.update(89)
@@ -308,11 +305,11 @@ class TestRectangle(unittest.TestCase):
         # with self.assertRaises(TypeError): # extra args
         #    r1.update(11, 12, 13, 14, 15, 16)
 
+        # KWARGS TESTS
         self.tearDown()
         self.setUp()
-        # KWARGS TESTS
         # Create a Rectangle instance
-        self.instances.append(Rectangle(10, 10, 10, 10, 1))  # TODO bug no id?
+        self.instances.append(Rectangle(10, 10, 10, 10))
         rect = self.instances[-1]
         self.assertEqual(str(rect), "[Rectangle] (1) 10/10 - 10/10")
 
@@ -335,6 +332,45 @@ class TestRectangle(unittest.TestCase):
         # Test update with keyword arguments x=1, height=2, y=3, width=4, id=98
         rect.update(x=1, height=2, y=3, width=4, id=98)
         self.assertEqual(str(rect), "[Rectangle] (98) 1/3 - 4/2")
+
+        # Test update with both args and kwargs
+        rect.update(89, 10, width=11)
+        self.assertEqual(str(rect), "[Rectangle] (89) 1/3 - 10/2")
+
+        # Test update with kwargs
+        rect.update(**{'id': 98})
+        self.assertEqual(rect.id, 98)
+        # Test update with kwargs
+        rect.update(**{'id': 89, 'width': 2})
+        self.assertEqual(rect.width, 2)
+        # Test update with kwargs
+        rect.update(**{'id': 89, 'width': 1, 'height': 4})
+        self.assertEqual(rect.height, 4)
+        # Test update with kwargs
+        rect.update(**{'id': 89, 'width': 1, 'height': 2, 'x': 9})
+        self.assertEqual(rect.x, 9)
+        # Test update with kwargs
+        rect.update(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 8})
+        self.assertEqual(rect.y, 8)
+
+    def test_to_dictionary(self):
+        """Tests if the method to_dictionary converts instance
+         to correct dictionary representation
+        """
+        self.instances.append(Rectangle(10, 2, 1, 9))
+        rect = self.instances[-1]
+        self.assertEqual(rect.to_dictionary(),
+                         {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+
+        self.assertListEqual(list(rect.to_dictionary().keys()),
+                             ['id', 'width', 'height', 'x', 'y', ])
+
+        self.instances.append(Rectangle(10, 7, 2, 8))
+        r1 = self.instances[-1]
+        dictionary = r1.to_dictionary()
+        self.assertDictEqual(dictionary,
+                             {"x": 2, "width": 10, "id": 2,
+                              "height": 7, "y": 8})
 
 
 if __name__ == "__main__":

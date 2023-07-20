@@ -1,11 +1,16 @@
 #!/usr/bin/python3
-""" Doc """
-import os, sys
+
+"""
+Doc
+"""
+import os
+import sys
 import subprocess
 
 
 def run_command(cmd):
-    process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process = subprocess.Popen(cmd.split(),
+                               stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     output, error = process.communicate()
     return "{}{}".format(output, error)
 
@@ -20,7 +25,7 @@ def run_unittest():
                 nb_tests = int(res.split("Ran ")[-1].split(" tests")[0])
             if nb_tests > 0 and "OK" in line:
                 is_success = True
-    except:
+    except Exception:
         nb_tests = 0
         is_success = False
     return nb_tests, is_success
@@ -63,7 +68,7 @@ class Base(Base):
             self.id = 89
         else:
             super().__init__(id)
-"""    
+"""
 
     with open(file_path_to_update, "w") as file:
         file.write(new_content)
@@ -74,7 +79,7 @@ class Base(Base):
         print("No test found")
     if passing:
         print("No test found for this case")
-except:
+except Exception:
     print("An error occured... {}".format(sys.exc_info()[0]))
 
 # rollback file
