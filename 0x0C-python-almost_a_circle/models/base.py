@@ -129,3 +129,70 @@ class Base:
         return [
                 cls.create(**dic) for dic in cls.from_json_string(json_str)
                 ]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes in CSV
+
+        Args:
+            list_objs (list): a list containing the instance description
+        """
+        import csv
+        filename = cls.__name__ + '.csv'
+        '''if list_objs is None:
+            list_objs = []
+
+        dicts = [obj.to_dictionary() for obj in list_objs]
+        if cls.__name__ == "Rectangle":
+            lines = ''
+            for obj in dicts:
+                lines += "{},{},{},{}\n".format(
+                    ['id'], obj['width'], obj['height'], obj['x'], obj['y'])
+
+        elif cls.__name__ == "Square":
+            lines = ''
+            for obj in dicts:
+                lines += "{},{},{},{}\n".format(
+                    obj['id'], obj['size'], obj['x'], obj['y'])
+
+        else:
+            lines = ''
+
+        with open(filename, mode='w', encoding='utf-8') as file:
+            file.write(lines)'''
+        with open(filename, mode='w', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                writer.writerow(obj.to_dictionary().values())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes from CSV
+        """
+        import csv
+        filename = cls.__name__ + '.csv'
+        try:
+            with open(filename, mode='r', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                instances = []
+                for row in reader:
+                    if cls.__name__ == 'Rectangle':
+                        dictionary = {
+                            'id': int(row[0]),
+                            'width': int(row[1]),
+                            'height': int(row[2]),
+                            'x': int(row[3]),
+                            'y': int(row[4])
+                        }
+                    elif cls.__name__ == 'Square':
+                        dictionary = {
+                            'id': int(row[0]),
+                            'size': int(row[1]),
+                            'x': int(row[2]),
+                            'y': int(row[3])
+                            }
+                    instances.append(cls.create(**dictionary))
+            return instances
+        except FileNotFoundError:
+            return []
