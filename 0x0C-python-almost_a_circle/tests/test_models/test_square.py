@@ -87,6 +87,12 @@ class TestSquare(unittest.TestCase):
             squa.size = 0
 
         with self.assertRaises(TypeError):
+            Square('1')
+
+        with self.assertRaises(ValueError):
+            Square(-1)
+
+        with self.assertRaises(TypeError):
             Square(1, "2")
 
         with self.assertRaises(TypeError):
@@ -168,6 +174,62 @@ class TestSquare(unittest.TestCase):
         r6 = self.instances[-1]
         self.assertNotEqual(dummy_instance, r6)
         self.assertNotEqual(r5, r6)
+
+    def test_save_to_file(self):
+        """Tests if save_to_file saves the JSON representation
+          of list_objs to a file
+        """
+        # Test empty list saves '[]'
+        import os
+
+        Square.save_to_file([])
+        with open('Square.json', 'r') as file:
+            self.assertEqual(file.read(), '[]')
+        os.remove('Square.json')
+
+        Square.save_to_file(None)
+        with open('Square.json', 'r') as file:
+            self.assertEqual(file.read(), '[]')
+        os.remove('Square.json')
+
+        # Test valid instance saves correctly in file
+        r = Square(1)
+        Square.save_to_file([r])
+        with open('Square.json', 'r') as file:
+            self.assertEqual(
+                file.read(),
+                '[{"id": 1, "size": 1, "x": 0, "y": 0}]'
+                )
+        os.remove('Square.json')
+
+        Square.save_to_file([Square(1)])
+        with open('Square.json', 'r') as file:
+            self.assertEqual(
+                file.read(),
+                '[{"id": 2, "size": 1, "x": 0, "y": 0}]'
+                )
+        os.remove('Square.json')
+
+    def test_load_from_file(self):
+        """Tests if load_from_file loads instances from a JSON file
+        """
+        # when file doesn’t exist
+        import os
+        try:
+            os.remove('Square.json')
+        except FileNotFoundError:
+            pass
+        instances = Square.load_from_file()
+        self.assertEqual(instances, [])
+
+        # when file exists
+        r = Square(1)
+        self.instances.append(r)
+        Square.save_to_file(self.instances)
+        instances = Square.load_from_file()
+        self.assertEqual(len(instances), 1)
+        self.assertIsInstance(instances[0], Square)
+        self.assertDictEqual(instances[0].to_dictionary(), r.to_dictionary())
 
 
 if __name__ == "__main__":
