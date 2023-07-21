@@ -62,6 +62,8 @@ class TestBase(unittest.TestCase):
         instance2 = Base()
         self.assertEqual(instance2.id, 1)  # first instance should have id = 1
 
+        self.assertEqual(Base(89).id, 89)
+
     def test_id_uniqueness(self):
         """
         Tests if each instance has a unique id.
@@ -108,6 +110,8 @@ class TestBase(unittest.TestCase):
         json_str = Base.to_json_string([blank])
         self.assertEqual(json_str, '[]')
         self.assertIsInstance(json_str, str)
+
+        self.assertEqual(Base.to_json_string([]), '[]')
 
     def test_from_json_string(self):
         """Tests if whether the mehtod from_json_string
