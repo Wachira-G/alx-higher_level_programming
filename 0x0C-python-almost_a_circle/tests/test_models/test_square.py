@@ -52,6 +52,7 @@ class TestSquare(unittest.TestCase):
         Returns:
         - None
         '''
+        # TODO test __str__()
         self.instances.append(Square(1))
         rect = self.instances[-1]
         self.assertEqual(rect.__str__(), '[Square] (1) 0/0 - 1')
@@ -81,8 +82,27 @@ class TestSquare(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             squa.size = '4'
+
         with self.assertRaises(ValueError):
             squa.size = 0
+
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
+
+        self.assertEqual(Square(1, 2, 3, 4).__str__(),
+                         '[Square] (4) 2/3 - 1')
+
+        with self.assertRaises(ValueError):
+            Square(1, -2)
+
+        with self.assertRaises(ValueError):
+            Square(1, 2, -3)
+
+        with self.assertRaises(ValueError):
+            Square(0)
 
     def test_update(self):
         """Tests if the update method updates attributes as expected

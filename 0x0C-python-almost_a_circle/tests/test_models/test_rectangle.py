@@ -406,6 +406,40 @@ class TestRectangle(unittest.TestCase):
         self.assertNotEqual(dummy_instance, r6)
         self.assertNotEqual(r5, r6)
 
+    def test_save_to_file(self):
+        """Tests if save_to_file saves the JSON representation
+          of list_objs to a file
+        """
+        # Test empty list saves '[]'
+        Rectangle.save_to_file([])
+        with open('Rectangle.json', 'r') as file:
+            self.assertEqual(file.read(), '[]')
+
+        # Test valid instance saves correctly in file
+        r = Rectangle(1, 2)
+        Rectangle.save_to_file([r])
+        with open('Rectangle.json', 'r') as file:
+            self.assertEqual(
+                file.read(),
+                '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]'
+                )
+
+    def test_load_from_file(self):
+        """Tests if load_from_file loads instances from a JSON file
+        """
+        # when file doesn’t exist
+        instances = Rectangle.load_from_file()
+        self.assertEqual(instances, [])
+
+        # when file exists
+        r = Rectangle(1, 2)
+        self.instances.append(r)
+        Rectangle.save_to_file(self.instances)
+        instances = Rectangle.load_from_file()
+        self.assertEqual(len(instances), 1)
+        self.assertIsInstance(instances[0], Rectangle)
+        self.assertDictEqual(instances[0].to_dictionary(), r.to_dictionary())
+
 
 if __name__ == "__main__":
     unittest.main()

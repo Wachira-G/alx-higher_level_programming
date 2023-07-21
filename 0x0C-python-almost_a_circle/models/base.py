@@ -119,10 +119,13 @@ class Base:
           and create methods (implemented previously)
         """
         filename = cls.__name__ + '.json'
-        with open(filename, mode='r', encoding='utf-8') as file:
-            try:
+        try:
+            with open(filename, mode='r', encoding='utf-8') as file:
                 json_str = file.read()
-            except FileNotFoundError:
-                return []
-            return [
-                cls.create(**dic) for dic in cls.from_json_string(json_str)]
+        except FileNotFoundError:
+            return []
+        if json_str == '[]':
+            return []
+        return [
+                cls.create(**dic) for dic in cls.from_json_string(json_str)
+                ]
