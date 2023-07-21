@@ -109,6 +109,62 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_str, '[]')
         self.assertIsInstance(json_str, str)
 
+    def test_from_json_string(self):
+        """Tests if whether the mehtod from_json_string
+         deserialises the json string crrectly
+        """
+        # Test serialisation and deserialisation
+        # of a list containing dictionaries
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7},
+            ]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(list_output,
+                         [{'height': 4, 'width': 10, 'id': 89},
+                          {'height': 7, 'width': 1, 'id': 7}])
+
+        # Test None json string returns an empty list
+        self.assertEqual(Base.from_json_string(None), [])
+
+        # Test empty json string returns an empty list
+        self.assertEqual(Base.from_json_string(''), [])
+
+    def test_create(self):
+        """Tests if the create method creates an instance of the class
+        """
+        self.instances.append(Rectangle(1, 1))
+        dummy_instance = self.instances[-1]
+
+        self.instances.append(Rectangle.create(**{'id': 89}))
+        r2 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r2)
+
+        self.instances.append(Rectangle.create(**{'id': 89, 'width': 1}))
+        r3 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r3)
+        self.assertNotEqual(r2, r3)
+
+        self.instances.append(
+            Rectangle.create(**{'id': 89, 'width': 1, 'height': 2}))
+        r4 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r4)
+        self.assertNotEqual(r3, r4)
+
+        self.instances.append(
+            Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3}))
+        r5 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r5)
+        self.assertNotEqual(r4, r5)
+
+        self.instances.append(
+            Rectangle.create(
+                **{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4}))
+        r6 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r6)
+        self.assertNotEqual(r5, r6)
+
 
 if __name__ == "__main__":
     unittest.main()

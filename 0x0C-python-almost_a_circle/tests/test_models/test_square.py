@@ -115,6 +115,40 @@ class TestSquare(unittest.TestCase):
         self.assertListEqual(list(rect.to_dictionary().keys()),
                              ['id', 'size', 'x', 'y', ])
 
+    def test_create(self):
+        """Tests if the create method creates an instance of the class
+        """
+        self.instances.append(Square(1, 1))
+        dummy_instance = self.instances[-1]
+
+        self.instances.append(Square.create(**{'id': 89}))
+        r2 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r2)
+
+        self.instances.append(Square.create(**{'id': 89, 'size': 1}))
+        r3 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r3)
+        self.assertNotEqual(r2, r3)
+
+        self.instances.append(
+            Square.create(**{'id': 89, 'size': 2}))
+        r4 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r4)
+        self.assertNotEqual(r3, r4)
+
+        self.instances.append(
+            Square.create(**{'id': 89, 'size': 2, 'x': 3}))
+        r5 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r5)
+        self.assertNotEqual(r4, r5)
+
+        self.instances.append(
+            Square.create(
+                **{'id': 89, 'size': 2, 'x': 3, 'y': 4}))
+        r6 = self.instances[-1]
+        self.assertNotEqual(dummy_instance, r6)
+        self.assertNotEqual(r5, r6)
+
 
 if __name__ == "__main__":
     unittest.main()
