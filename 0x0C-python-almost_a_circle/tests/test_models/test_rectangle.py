@@ -439,7 +439,7 @@ class TestRectangle(unittest.TestCase):
         # when file doesn’t exist
         import os
         try:
-            os.remove('Square.json')
+            os.remove('Rectangle.json')
         except FileNotFoundError:
             pass
         instances = Rectangle.load_from_file()
