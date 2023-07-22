@@ -227,4 +227,37 @@ class Base:
         Test with 'xeyes'. If Xquartz is installed on the Mac OS
           it should open in an Xquartz window.
         '''
-        pass
+        import turtle
+        # Set up the Turtle screen
+        window = turtle.Screen()
+        window.bgcolor("white")
+
+        # Create a Turtle instance
+        t = turtle.Turtle()
+
+        # Draw Rectangles
+        t.speed(1)
+        t.color("blue")
+        for rect in list_rectangles:
+            t.penup()
+            t.goto(rect.x, rect.y)
+            t.pendown()
+            for _ in range(2):
+                t.forward(rect.width)
+                t.left(90)
+                t.forward(rect.height)
+                t.left(90)
+
+        # Draw Squares
+        t.speed(1)
+        t.color("red")
+        for square in list_squares:
+            t.penup()
+            t.goto(square.x, square.y)
+            t.pendown()
+            for _ in range(4):
+                t.forward(square.size)
+                t.left(90)
+
+        # Close the Turtle graphics window on click
+        window.exitonclick()
