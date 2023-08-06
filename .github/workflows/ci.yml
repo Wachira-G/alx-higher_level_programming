@@ -1,10 +1,9 @@
-name: ALX High level Programming
+name: ALX High-level Programming
 on:
     push:
-      branches:
-        - main
-  
-  jobs:
+      branches: [ main ]
+
+jobs:
     build:
       runs-on: ubuntu-latest
 
