@@ -1,0 +1,49 @@
+name: ALX High level Programming
+on:
+    push:
+      branches:
+        - main
+  
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+  
+        - name: Install dependencies
+          run: pip install -r requirements.txt
+  
+        - name: Check required files
+          run: |
+            if [ ! -f "README.md" ]; then
+              echo "Required files missing: README.md"
+              exit 1
+            fi
+  
+        - name: Run tests
+          run: python3 -m unittest discover tests
+  
+        - name: Check .py files are executable
+          run: |
+            find . -type f -name "*.py" -exec sh -c 'test -x "{}"' \; -print || (echo "Some .py files are not executable" && exit 1)
+  
+        - name: Generate code documentation
+          run: |
+            # Assuming you have a documentation generation command, replace the following with the actual command
+            # generate_docs_command_here
+  
+        - name: Check code documentation
+          run: |
+            # Assuming you have a documentation checking command, replace the following with the actual command
+            # check_docs_command_here
+            pydocstyle .
+  
+        - name: Check code style
+          run: |
+            pycodestyle .
+  
+        - name: Check files end in a new line
+          run: |
+            find . -type f -not -path "./.git/*" -exec sh -c 'tail -c1 "{}" | read -r _ || (echo "{} does not end with a new line" && exit 1)' \;
