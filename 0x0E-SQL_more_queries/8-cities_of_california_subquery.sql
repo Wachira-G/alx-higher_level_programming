@@ -8,5 +8,5 @@
 
 SELECT id, name
 FROM cities
- WHERE id = (SELECT id FROM states WHERE name="California" LIMIT 1)
+ WHERE state_id = (SELECT id FROM states WHERE name="California" LIMIT 1)
 ORDER BY cities.id;
