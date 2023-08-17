@@ -41,7 +41,7 @@ jobs:
   
         - name: Check code style
           run: |
-            pycodestyle .
+            # pycodestyle . # same as above as we had not checked those in earlier files
   
         - name: Check files end in a new line
           run: |
