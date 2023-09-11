@@ -10,9 +10,7 @@ function secondBiggest (arr) {
   }
 
   const newArr = Array.from(new Set(arr.map(Number)));// - duplicates
-  newArr.sort();
-  console.log(arr);
-  console.log(newArr);
+  newArr.sort((a, b) => a - b);
   const newArrSize = newArr.length;
   const index = [newArrSize - 2];
 
