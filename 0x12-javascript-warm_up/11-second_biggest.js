@@ -9,14 +9,17 @@ function secondBiggest (arr) {
     return 0;
   }
 
-  const newArr = Array.from(new Set(arr)); // remove duplicates
+  const newArr = Array.from(new Set(arr.map(Number)));// - duplicates
+  newArr.sort();
+  console.log(arr);
+  console.log(newArr);
   const newArrSize = newArr.length;
   const index = [newArrSize - 2];
 
   if (index < 0) {
-    return newArr.sort()[0];
+    return newArr[0];
   } else {
-    return newArr.sort()[index];
+    return newArr[index];
   }
 }
 
