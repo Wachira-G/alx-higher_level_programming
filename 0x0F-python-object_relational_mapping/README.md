@@ -1,6 +1,7 @@
 # Concept: 0x0F. Python - Object-relational mapping
 
 **Requirements**
+
 ```
 MySQL server 8.0
 Ubuntu 20.04 LTS using python3 (version 3.8.5)
@@ -9,6 +10,7 @@ SQLAlchemy version 1.4.x
 ```
 
 ## Background Context
+
 In this project, you will link two amazing worlds: Databases and Python!
 
 In the first part, you will use the module MySQLdb to connect to a MySQL database and execute your SQL queries.
@@ -43,6 +45,7 @@ The biggest difference is: no more SQL queries! Indeed, the purpose of an ORM is
 
 
 ## Resources
+
 **Read or watch:**
 
 - Object-relational mappers

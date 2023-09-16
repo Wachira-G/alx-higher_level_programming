@@ -4,37 +4,39 @@
 Lists from the database hbtn_0e_0_usa where name matches the argument.
 """
 
-import MySQLdb
-import sys
+if __name__ == "__main__":
 
-args = sys.argv
-mysql_username = args[1]
-mysql_password = args[2]
-database_name = args[3]
-state_name_searched = args[4]
+    import MySQLdb
+    import sys
 
-connection = MySQLdb.connect(
-    host="localhost",
-    port=3306,
-    user=mysql_username,
-    passwd=mysql_password,
-    db=database_name,
-    charset="utf8",
-)
-cursor = connection.cursor()
-cursor.execute(
-    "SELECT *\
-    FROM states\
-    WHERE states.name LIKE BINARY '{}%'\
-    ORDER BY id ASC".format(
-        state_name_searched
+    args = sys.argv
+    mysql_username = args[1]
+    mysql_password = args[2]
+    database_name = args[3]
+    state_name_searched = args[4]
+
+    connection = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=mysql_username,
+        passwd=mysql_password,
+        db=database_name,
+        charset="utf8",
     )
-)
+    cursor = connection.cursor()
+    cursor.execute(
+        "SELECT *\
+        FROM states\
+        WHERE states.name LIKE BINARY '{}%'\
+        ORDER BY id ASC".format(
+            state_name_searched
+        )
+    )
 
-query_rows = cursor.fetchall()
+    query_rows = cursor.fetchall()
 
-for row in query_rows:
-    print(row)
+    for row in query_rows:
+        print(row)
 
-cursor.close()
-connection.close()
+    cursor.close()
+    connection.close()

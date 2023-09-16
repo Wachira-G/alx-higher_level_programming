@@ -1,35 +1,37 @@
 #!/usr/bin/python3
 """Lists all cities from the database hbtn_0e_4_usa."""
 
-import MySQLdb
-import sys
+if __name__ == "__main__":
 
-args = sys.argv
-mysql_username = args[1]
-mysql_password = args[2]
-database_name = args[3]
+    import MySQLdb
+    import sys
 
-connection = MySQLdb.connect(
-    host="localhost",
-    port=3306,
-    user=mysql_username,
-    passwd=mysql_password,
-    db=database_name,
-    charset="utf8",
-)
-cursor = connection.cursor()
+    args = sys.argv
+    mysql_username = args[1]
+    mysql_password = args[2]
+    database_name = args[3]
 
-query = "SELECT cities.id, cities.name, states.name\
-    FROM cities\
-    JOIN states\
-    ON states.id = cities.state_id\
-    ORDER BY id ASC"
-cursor.execute(query)
+    connection = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=mysql_username,
+        passwd=mysql_password,
+        db=database_name,
+        charset="utf8",
+    )
+    cursor = connection.cursor()
 
-query_rows = cursor.fetchall()
+    query = "SELECT cities.id, cities.name, states.name\
+        FROM cities\
+        JOIN states\
+        ON states.id = cities.state_id\
+        ORDER BY id ASC"
+    cursor.execute(query)
 
-for row in query_rows:
-    print(row)
+    query_rows = cursor.fetchall()
 
-cursor.close()
-connection.close()
+    for row in query_rows:
+        print(row)
+
+    cursor.close()
+    connection.close()

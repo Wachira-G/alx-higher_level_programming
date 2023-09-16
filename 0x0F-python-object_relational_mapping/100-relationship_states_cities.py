@@ -4,13 +4,14 @@
 this is from the database hbtn_0e_100_usa.
 """
 
-from sys import argv
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from relationship_state import State, Base
-from relationship_city import City
-
 if __name__ == "__main__":
+
+    from sys import argv
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    from relationship_state import State, Base
+    from relationship_city import City
+
     username = argv[1]
     password = argv[2]
     db_name = argv[3]
