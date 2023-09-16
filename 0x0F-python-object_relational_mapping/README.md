@@ -1,10 +1,12 @@
 # Concept: 0x0F. Python - Object-relational mapping
 
 **Requirements**
-> MySQL server 8.0
-> Ubuntu 20.04 LTS using python3 (version 3.8.5)
-> MySQLdb version 2.0.x
-> SQLAlchemy version 1.4.x
+```
+MySQL server 8.0
+Ubuntu 20.04 LTS using python3 (version 3.8.5)
+MySQLdb version 2.0.x
+SQLAlchemy version 1.4.x
+```
 
 ## Background Context
 In this project, you will link two amazing worlds: Databases and Python!
