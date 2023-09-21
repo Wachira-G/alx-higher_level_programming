@@ -37,6 +37,6 @@ if __name__ == "__main__":
         state_name = result[0]
         city_id = result[1]
         city_name = result[2]
-        print("{}: ({}) {})".format(state_name, city_id, city_name))
+        print("{}: ({}) {}".format(state_name, city_id, city_name))
 
     session.close()
