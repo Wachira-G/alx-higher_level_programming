@@ -17,4 +17,4 @@ if __name__ == "__main__":
             print(content)
 
     except error.HTTPError as e:
-        print('Error code: ', e.getcode(response))
+        print('Error code: {}'.format(e.getcode(response)))
