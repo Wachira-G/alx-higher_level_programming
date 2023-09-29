@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" This module... """
+""" This module lists 10 commits (recent to oldest) from a repo by a user."""
+
+
 if __name__ == "__main__":
     import requests
     from sys import argv
@@ -20,4 +22,4 @@ if __name__ == "__main__":
             author = commit['commit']['author']['name']
             # date = commit['commit']['author']['date']
             count -= 1
-            print('{}: {}'.format(sha, author)) # , date)
+            print('{}: {}'.format(sha, author))  # , date)
