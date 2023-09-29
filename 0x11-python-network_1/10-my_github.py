@@ -19,6 +19,9 @@ if __name__ == "__main__":
     session.auth = (username, token)
 
     response = session.get(url)
-    json = response.json()
-    if json and isinstance(json, dict) and 'id' in json.keys():
-        print(response.json()['id'])
+    if response.status_code == 200:
+        json = response.json()
+        if json and isinstance(json, dict) and 'id' in json.keys():
+            print(response.json()['id'])
+    else:
+        print(None)
