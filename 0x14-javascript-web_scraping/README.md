@@ -3,10 +3,6 @@
 
 ScriptingAPIJavaScript
 
--   By: Guillaume, CTO at Holberton School
--   Weight: 1
--   Ongoing second chance project - started Oct 24, 2023 6:00 AM, must end by Oct 26, 2023 6:00 AM
--   An auto review will be launched at the deadline
 
 Resources
 ---------
@@ -32,10 +28,8 @@ Requirements
 ------------
 
 ### General
--   All your files will be interpreted on Ubuntu 20.04 LTS using `node` (version 14.x)
--   A `README.md` file, at the root of the folder of the project, is mandatory
--   Your code should be `semistandard` compliant. [Rules of Standard](https://intranet.alxswe.com/rltoken/W9rASrTqkF-xXjcwomrMLw "Rules of Standard") + [semicolons on top](https://intranet.alxswe.com/rltoken/GXh9DyGGivUB7pdq9Oqmzg "semicolons on top"). Also as reference: [AirBnB style](https://intranet.alxswe.com/rltoken/NZR55f9vk1dZXj5q7UI5mQ "AirBnB style")
--   You are not allowed to use `var`
+-   All files will interpreted on Ubuntu 20.04 LTS using `node` (version 14.x)
+-   Code is `semistandard` compliant. [Rules of Standard](https://intranet.alxswe.com/rltoken/W9rASrTqkF-xXjcwomrMLw "Rules of Standard") + [semicolons on top](https://intranet.alxswe.com/rltoken/GXh9DyGGivUB7pdq9Oqmzg "semicolons on top"). Also as reference: [AirBnB style](https://intranet.alxswe.com/rltoken/NZR55f9vk1dZXj5q7UI5mQ "AirBnB style"
 
 More Info
 ---------
@@ -69,7 +63,7 @@ $ export NODE_PATH=/usr/lib/node_modules
 
 **Notes:** Request module has been deprecated since February 2020
 
-Summary of JavaScript Concepts Covered:
+## Summary of JavaScript Concepts Covered:
 
 1.  Reading and Writing Files: Learned how to read the content of a file using the `fs` module and write data to a file using `fs.writeFileSync` and `fs.appendFileSync`.
 
