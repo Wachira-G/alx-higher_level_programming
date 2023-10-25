@@ -68,3 +68,21 @@ $ export NODE_PATH=/usr/lib/node_modules
 ```
 
 **Notes:** Request module has been deprecated since February 2020
+
+Summary of JavaScript Concepts Covered:
+
+1.  Reading and Writing Files: Learned how to read the content of a file using the `fs` module and write data to a file using `fs.writeFileSync` and `fs.appendFileSync`.
+
+2.  HTTP Requests: Used the `request` module to make HTTP GET requests to both web pages and APIs, retrieving data from external sources.
+
+3.  Command Line Arguments: Accessed command line arguments in my scripts using `process.argv`.
+
+4.  Error Handling: Implemented error handling to deal with potential issues when making HTTP requests or working with files.
+
+5.  Asynchronous Programming: Handled asynchronous tasks by using callback functions in my HTTP request code.
+
+6.  API Integration: Interacted with external APIs (Star Wars API and JSONPlaceholder API) to retrieve specific data based on my script's requirements.
+
+7.  Data Manipulation: Parsed JSON data and manipulated it to extract relevant information.
+
+8.  Looping: Used loops, such as `forEach`, to iterate over arrays of data and perform operations on each item.
